@@ -1,0 +1,559 @@
+body {
+  background-color: #baabda;
+  font-family: "Poppins";
+}
+h1 {
+  color: white;
+  text-align: center;
+  text-shadow: 5px 2px 6px rgba(0, 0, 0, 0.53);
+}
+/* Styling the white box */
+.box {
+  width: 400px;
+  height: 350px;
+  background-color: white;
+  padding: 20px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 0.8rem;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+/*Styling the div of quotes*/
+#cquotes {
+  width: 380px;
+  height: 250px;
+  background-color: white;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-top: 20px;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.write { /*styling the div of quote and author*/
+  width: 380px;
+  height: 180px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.radio-inputs { /*styling the bar*/
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 0.5rem;
+  background-color: #eee;
+  box-sizing: border-box;
+  box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.06);
+  padding: 0.25rem;
+  width: 300px;
+  font-size: 14px;
+  margin-left: 53px;
+}
+
+.radio-inputs .radio {
+  flex: 1 1 auto;
+  text-align: center;
+}
+
+.radio-inputs .radio input {
+  display: none;
+}
+
+.radio-inputs .radio .name {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  border: none;
+  padding: 0.5rem 0;
+  color: rgba(51, 65, 85, 1);
+  transition: all 0.15s ease-in-out;
+}
+
+.radio-inputs .radio input:checked + .name {
+  background-color: #fff;
+  font-weight: 600;
+}
+.p1 { /*styling the quote*/
+  color: #000000;
+  text-align: center;
+  flex-shrink: 1; /* Allow the text to shrink to fit within the box */
+  overflow: hidden;
+  white-space: normal; /* Reset white-space to allow wrapping */
+  word-wrap: break-word; /* Break long words */
+}
+.p2 { /*styling the author*/
+  color: #000000;
+  text-transform: capitalize;
+  text-align: center;
+  font-style: italic;
+  font-weight: 300;
+  flex-shrink: 0; /* Prevent the author from shrinking */
+  font-style: italic;
+}
+.bbtn { /*styling all the buttons*/
+  display: flex;
+}
+.sbtn { /*styling copy and like button*/
+  display: flex;
+  margin-left: 120px;
+}
+.button2 { /*styling generate button*/
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 30px;
+  border: 0;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10rem;
+  transition: all 0.02s;
+  font-weight: bold;
+  color: rgb(37, 37, 37);
+  z-index: 0;
+  box-shadow: 0 0px 7px -5px rgba(0, 0, 0, 0.5);
+}
+.button2:hover {
+  background: rgb(193, 228, 248);
+  color: rgb(33, 0, 85);
+}
+
+.button2:active {
+  transform: scale(0.97);
+}
+
+.hoverEffect {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.hoverEffect div {
+  background: rgb(222, 0, 75);
+  background: linear-gradient(
+    90deg,
+    rgba(222, 0, 75, 1) 0%,
+    rgba(191, 70, 255, 1) 49%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  border-radius: 40rem;
+  width: 10rem;
+  height: 10rem;
+  transition: 0.4s;
+  filter: blur(20px);
+  animation: effect infinite 3s linear;
+  opacity: 0.5;
+}
+
+.button2:hover .hoverEffect div {
+  width: 8rem;
+  height: 8rem;
+}
+
+@keyframes effect {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.copy { /*styling copy button*/
+  /* button */
+  --button-bg: #d77fa1;
+  --button-hover-bg: #d77fa1;
+  --button-text-color: #ffffff;
+  --button-hover-text-color: #8bb9fe;
+  --button-border-radius: 10px;
+  --button-diameter: 36px;
+  --button-outline-width: 1px;
+  --button-outline-color: rgb(141, 141, 141);
+  /* tooltip */
+  --tooltip-bg: #f4f3f3;
+  --toolptip-border-radius: 4px;
+  --tooltip-font-family: Menlo, Roboto Mono, monospace;
+  --tooltip-font-size: 12px;
+  --tootip-text-color: rgb(50, 50, 50);
+  --tooltip-padding-x: 7px;
+  --tooltip-padding-y: 7px;
+  --tooltip-offset: 8px;
+}
+
+.copy {
+  box-sizing: border-box;
+  width: var(--button-diameter);
+  height: var(--button-diameter);
+  border-radius: var(--button-border-radius);
+  background-color: var(--button-bg);
+  color: var(--button-text-color);
+  border: none;
+  cursor: pointer;
+  position: relative;
+  outline: none;
+  margin-right: 25px;
+  z-index: 9;
+}
+
+.tooltip {
+  position: absolute;
+  opacity: 0;
+  visibility: 0;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  font: var(--tooltip-font-size) var(--tooltip-font-family);
+  color: var(--tootip-text-color);
+  background: var(--tooltip-bg);
+  padding: var(--tooltip-padding-y) var(--tooltip-padding-x);
+  border-radius: var(--toolptip-border-radius);
+  pointer-events: none;
+  transition: all var(--tooltip-transition-duration)
+    cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.tooltip::before {
+  content: attr(data-text-initial);
+}
+
+.tooltip::after {
+  content: "";
+  position: absolute;
+  bottom: calc(var(--tooltip-padding-y) / 2 * -1);
+  width: var(--tooltip-padding-y);
+  height: var(--tooltip-padding-y);
+  background: inherit;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  z-index: -999;
+  pointer-events: none;
+}
+
+.copy svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.checkmark {
+  display: none;
+}
+
+/* actions of the copy button */
+
+.copy:hover .tooltip,
+.copy:focus:not(:focus-visible) .tooltip {
+  opacity: 1;
+  visibility: visible;
+  top: calc((100% + var(--tooltip-offset)) * -1);
+}
+
+.copy:focus:not(:focus-visible) .tooltip::before {
+  content: attr(data-text-end);
+}
+
+.copy:focus:not(:focus-visible) .clipboard {
+  display: none;
+}
+
+.copy:focus:not(:focus-visible) .checkmark {
+  display: block;
+}
+
+.copy:hover,
+.copy:focus {
+  background-color: var(--button-hover-bg);
+}
+
+.copy:active {
+  outline: var(--button-outline-width) solid var(--button-outline-color);
+}
+
+.copy:hover svg {
+  color: var(--button-hover-text-color);
+}
+
+.con-like { /*styling the like button*/
+  --red: #d77fa1;
+  position: relative;
+  width: 28px;
+  height: 28px;
+  margin-top: 2px;
+}
+
+.con-like .like {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 20;
+  cursor: pointer;
+}
+
+.con-like .checkmark {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.con-like .outline,
+.con-like .filled {
+  fill: var(--red);
+  position: absolute;
+}
+
+.con-like .filled {
+  animation: kfr-filled 0.5s;
+  display: none;
+}
+
+.con-like .celebrate {
+  position: absolute;
+  animation: kfr-celebrate 0.5s;
+  animation-fill-mode: forwards;
+  display: none;
+}
+
+.con-like .poly {
+  stroke: var(--red);
+  fill: var(--red);
+}
+
+.con-like .like:checked ~ .checkmark .filled {
+  display: block;
+}
+
+.con-like .like:checked ~ .checkmark .celebrate {
+  display: block;
+}
+
+@keyframes kfr-filled {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+@keyframes kfr-celebrate {
+  0% {
+    transform: scale(0);
+  }
+
+  50% {
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: scale(1.2);
+    opacity: 0;
+    display: none;
+  }
+}
+
+/*Styling about me div*/
+.aboutme {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 50px;
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.up {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5em;
+}
+
+.down {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5em;
+}
+
+.card1 {
+  width: 90px;
+  height: 90px;
+  outline: none;
+  border: none;
+  background: white;
+  border-radius: 90px 5px 5px 5px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  transition: 0.2s ease-in-out;
+}
+
+.instagram {
+  margin-top: 1.5em;
+  margin-left: 1.2em;
+  fill: #cc39a4;
+}
+
+.card2 {
+  width: 90px;
+  height: 90px;
+  outline: none;
+  border: none;
+  background: white;
+  border-radius: 5px 90px 5px 5px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  transition: 0.2s ease-in-out;
+}
+
+.twitter {
+  margin-top: 1.5em;
+  margin-left: -0.9em;
+  fill: #03a9f4;
+}
+
+.card3 {
+  width: 90px;
+  height: 90px;
+  outline: none;
+  border: none;
+  background: white;
+  border-radius: 5px 5px 5px 90px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  transition: 0.2s ease-in-out;
+}
+
+.github {
+  margin-top: -0.6em;
+  margin-left: 1.2em;
+}
+
+.card4 {
+  width: 90px;
+  height: 90px;
+  outline: none;
+  border: none;
+  background: white;
+  border-radius: 5px 5px 90px 5px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  transition: 0.2s ease-in-out;
+}
+
+.discord {
+  margin-top: -0.9em;
+  margin-left: -1.2em;
+  fill: #8c9eff;
+}
+
+.card1:hover {
+  cursor: pointer;
+  scale: 1.1;
+  background-color: #cc39a4;
+}
+
+.card1:hover .instagram {
+  fill: white;
+}
+
+.card2:hover {
+  cursor: pointer;
+  scale: 1.1;
+  background-color: #03a9f4;
+}
+
+.card2:hover .twitter {
+  fill: white;
+}
+
+.card3:hover {
+  cursor: pointer;
+  scale: 1.1;
+  background-color: black;
+}
+
+.card3:hover .github {
+  fill: white;
+}
+
+.card4:hover {
+  cursor: pointer;
+  scale: 1.1;
+  background-color: #8c9eff;
+}
+
+.card4:hover .discord {
+  fill: white;
+}
+
+/*Styling the favorites div*/
+#favorites-container {
+  width: 380px;
+  height: 260px;
+  background-color: white;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+ul {
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+#favorites-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+#favorites-list li {
+  display: block;
+}
+/* Styles for the quote and author in the favorites list */
+#favorites-list .quote {
+  font-weight: bold;
+}
+
+#favorites-list .author {
+  font-style: italic;
+}
+
+#favorites-list button {
+  display: flex;
+  padding: 0.2em;
+  border: 0px solid transparent;
+  background-color: rgba(100, 77, 237, 0.08);
+  border-radius: 1.25em;
+  transition: all 0.2s linear;
+}
